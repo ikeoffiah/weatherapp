@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+<div class="content">
+
+
+ {% if weather %}
+    <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ weather.city }}</h5>
+      <h5 class="card-text">Weather Temperature: {{ weather.temperature }}° F</h5>
+    <p class="card-text">{{ weather.description }}</p>
+  </div>
+</div>
+{% endif %}
+
+
+
+   <div class="ofo">
+            <form action="/" method="POST">
+                <div class="form-group">
+                    <label for="content"><h3>Check Weather</h3></label>
+        <input type="text" name="content" id="content" class="form-control" placeholder="Enter city here">
+                    </div>
+                <button type="submit" class="btn btn-outline-primary">Check now</button>
+    </form>
+    </div>
+
+
+
+
+
+</div>
+{% endblock content %}
